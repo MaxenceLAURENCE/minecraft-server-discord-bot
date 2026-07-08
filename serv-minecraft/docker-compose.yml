@@ -1,0 +1,21 @@
+services:
+    minecraft:
+        image: itzg/minecraft-server:latest
+        container_name: minecraft-server
+        tty: true
+        stdin_open: true
+        ports:
+            - "25565:25565"
+            - "2222:2222" # Port SSH externe pour se connecter à la console
+        environment:
+            EULA: "TRUE"
+            TYPE: "NEOFORGE"
+            VERSION: "1.21.1"
+            NEOFORGE_VERSION: "21.1.235"
+            MEMORY: "8G"
+            ENABLE_SSH: "true"
+            RCON_PASSWORD: "bite" # REMPLACER PAR VOTRE MOT DE PASSE
+            ONLINE_MODE: "FALSE"
+
+        volumes:
+            - ./mods:/data/mods
