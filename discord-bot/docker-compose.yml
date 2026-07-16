@@ -1,7 +1,10 @@
+# name: discord-bot-dev
+
 services:
     discord-bot:
         build: .
         container_name: minecraft-discord-bot
+        # container_name: minecraft-discord-bot-dev
         volumes:
             - /var/run/docker.sock:/var/run/docker.sock
             - ../.env:/app/.env
