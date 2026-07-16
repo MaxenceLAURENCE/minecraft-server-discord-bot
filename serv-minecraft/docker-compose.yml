@@ -1,12 +1,17 @@
+# name: serv-minecraft-dev
+
 services:
     minecraft:
         image: itzg/minecraft-server:latest
         container_name: minecraft-server
+        # container_name: minecraft-server-dev
         tty: true
         stdin_open: true
         ports:
             - "25565:25565"
             - "2222:2222" # Port SSH externe pour se connecter à la console
+            # - "25566:25565"
+            # - "2223:2222" # Port SSH externe pour se connecter à la console
         environment:
             EULA: "TRUE"
             TYPE: "NEOFORGE"
