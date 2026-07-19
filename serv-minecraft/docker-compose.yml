@@ -1,26 +1,23 @@
-# name: serv-minecraft-dev
+name: ${PROJECT_NAME}
 
 services:
     minecraft:
         image: itzg/minecraft-server:latest
-        container_name: minecraft-server
-        # container_name: minecraft-server-dev
+        container_name: ${MINECRAFT_CONTAINER_NAME}
         tty: true
         stdin_open: true
         ports:
-            - "25565:25565"
-            - "2222:2222" # Port SSH externe pour se connecter à la console
-            # - "25566:25565"
-            # - "2223:2222" # Port SSH externe pour se connecter à la console
+            - "${MINECRAFT_PORT}:25565"
+            - "${SSH_PORT}:2222" 
         environment:
             EULA: "TRUE"
             TYPE: "NEOFORGE"
             VERSION: "1.21.1"
             NEOFORGE_VERSION: "21.1.235"
-            MEMORY: "8G"
+            MEMORY: ${MEMORY}
             ENABLE_SSH: "true"
-            RCON_PASSWORD: "bite" # REMPLACER PAR VOTRE MOT DE PASSE
+            RCON_PASSWORD: ${SSH_PASSWORD}
             ONLINE_MODE: "FALSE"
-
         volumes:
-            - ./mods:/data/mods
+            - ${MODS_DIR}:/data/mods
+            # - ${WORLD_VOLUME}
