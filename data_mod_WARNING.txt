@@ -1,3 +1,0 @@
-data_mod c'est les data de transition !!!!! 
-
-a utiliser qu'une seul fois !!! 

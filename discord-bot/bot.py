@@ -12,7 +12,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 TOKEN = os.getenv("DISCORD_TOKEN")
-CONTAINER_NAME = os.getenv("CONTAINER_NAME", "minecraft-server")
+CONTAINER_NAME = os.getenv("MINECRAFT_CONTAINER_NAME", "")
 MINECRAFT_HOST = os.getenv("MINECRAFT_HOST", "")
 MINECRAFT_PORT = int(os.getenv("MINECRAFT_PORT", "25565"))
 
